@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="gugu-button">구구단출력</button>
+    <div id="gugu-place">여기에 구구단이 출력됩니다.</div>
+
+    <script>
+        /*
+        구구단출력 버튼을 누르면
+        몇단을 출력할것인지 프롬프트로 입력받고,
+        gugu-place에 해당되는 단을 출력합니다.
+        ex) prompt 7 입력 ->
+        gugu-place에
+        7 * 2 = 14
+        7 * 3 = 21
+        .
+        .
+        .
+        7 * 8 = 56
+        7 * 9 = 63
+        위와 같이 출력하도록 만들어주세요!
+        힌트 ) 
+        guguPlace.innerHTML = 
+        guguPlace.innerHTML += 
+        위에꺼 둘다 써야함!
+        */
+
+        // let 몇단 =
+         /*parseInt(prompt('몇단을 외울까요?'));
+        
+        const guguPlace = document.getElementsByClassName('gugu-place');
+
+        for(let i = 1; i <=9 ; i++){
+            parseInt(prompt('몇단을 외울까요?'))=+('click', 구구단출력기);
+        }
+        function 구구단출력기(){   
+            const guguButton = document.querySelector('.gugu-button');
+            guguButton.innerHTML = `${몇단} X ${i} = ${몇단*i}`   
+    }
+    */
+    const guguPlace = document.getElementById('gugu-place')
+    // let 구구단결과 = guguPlace.innerHTML
+    let 구구단 = parseInt(prompt('몇단을 외울까요?'))
+
+    for(let i = 1; i <= 9 ; i++){
+        구구단결과 += `${구구단} X ${i} = ${구구단 * i}`
+    }
+    console.log(구구단결과);
+
+
+    </script>
+</body>
+</html>
