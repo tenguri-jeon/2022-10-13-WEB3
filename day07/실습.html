@@ -31,8 +31,26 @@
         위에꺼 둘다 써야함!
         */
 
-        // let 몇단 =
-         /*parseInt(prompt('몇단을 외울까요?'));
+       
+       const guguButton = document.getElementById('gugu-button');
+       const guguPlace = document.getElementById('gugu-place');
+       
+       
+       function 구구단자판기실행함수(){
+           guguButton.addEventListener("click",function){
+               let 몇단 = parseInt(prompt('몇단을 외울까요?'));
+           };
+        }
+    
+    for (let i = 1; i <=9 ; i++){
+       guguPlace.innerHTML += (`${몇단} X ${i} = ${몇단*i}<br>`);
+    }
+    
+    
+    
+    
+        /*
+        let 몇단 =parseInt(prompt('몇단을 외울까요?'));
         
         const guguPlace = document.getElementsByClassName('gugu-place');
 
@@ -44,14 +62,15 @@
             guguButton.innerHTML = `${몇단} X ${i} = ${몇단*i}`   
     }
     */
-    const guguPlace = document.getElementById('gugu-place')
-    // let 구구단결과 = guguPlace.innerHTML
+    /*const guguPlace = document.getElementById('gugu-place')
+    let 구구단결과 = guguPlace.innerHTML
     let 구구단 = parseInt(prompt('몇단을 외울까요?'))
 
     for(let i = 1; i <= 9 ; i++){
         구구단결과 += `${구구단} X ${i} = ${구구단 * i}`
     }
     console.log(구구단결과);
+    */
 
 
     </script>
