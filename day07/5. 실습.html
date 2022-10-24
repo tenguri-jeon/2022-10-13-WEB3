@@ -11,6 +11,19 @@
     <div id="gugu-place">여기에 구구단이 출력됩니다.</div>
 
     <script>
+
+        document.getElementById("gugu-button").addEventListener('click', gugudan);
+        
+        function gugudan() { 
+            const 구구단 = parseInt(prompt('몇단을 출력할까요?'))
+            const guguPlace = document.getElementById('gugu-place');
+            //초기화 + 몇단인지 출력
+            guguPlace.innerHTML = `<h2>${구구단}단</h2>`
+            // 1단부터 9단까지 반복문 이용해 출력
+            for(let j=1; j<10; j++) {
+                guguPlace.innerHTML += (`${구구단}x${j}=${구구단*j}<br>`)
+            }
+        }
         /*
         구구단출력 버튼을 누르면
         몇단을 출력할것인지 프롬프트로 입력받고,

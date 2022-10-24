@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="what-time">몇시인가요?</button>
+    <script>
+        /*
+        사전적 정의
+        컴퓨터 과학에서 객체 또는 오브젝트(object)는 클래스에서 정의한 것을 토대로
+        메모리(실제 저장공간)에 할당된 것으로 프로그램에서 사용되는 데이터 또는
+        식별자에 의해 참조되는 공간을 의미하며, 변수, 자료 구조, 함수 또는 메소드가 될 수 있다.
+
+        Ex)
+        같은 붕어빵 틀에 여러가지 재료를 넣어서 만들면
+        모양은 같지만 내부에 갖고있는 속성은 서로 다른 붕어빵이 나온다.
+        class라는것은 설계도로, 붕어빵 틀에 비유할수 있고
+        객체는 붕어빵에 비유할 수 있다.
+        */
+
+        const now = new Date();
+        // Date는 클래스의 일종
+        // 날짜, 시간에 관련된 객체를 만들때 이용한다.
+        // 아무런 인수를 입력하지 않으면 현재 시간으로 생성된다.
+
+        // new는 새로운 객체를 만들겠다는 선언이다.
+        console.log(now);
+
+
+
+        // 버튼을 누르면 현재시간을 알려주는 기능을 만든다?
+        const whatTime = document.getElementById('what-time');
+        // 화살표함수 선언
+        whatTime.addEventListener('click',()=>{
+            const time = new Date();
+            alert(`현재시각은 ${time.getHours()}시 ${time.getMinutes()}분입니다.`);
+        })
+
+    
+
+
+    </script>
+</body>
+</html>
