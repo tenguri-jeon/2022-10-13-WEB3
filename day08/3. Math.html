@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <button id = "game-start">게임시작!</button>
     <script>
         // const now = new Date(); 일반적인 객체 사용
         
         // Math는 수학과 관련된 상수나 기능들이 들어있는 객체
         // 다른 객체처럼 생성을 따로 하진 않는다. 그냥 사용가능!
-        alert(Math.floor(Math.random()*45+1));
+        // alert(Math.floor(Math.random()*45+1));
 
 
         /*
@@ -37,6 +38,28 @@
 
         */
 
+        const gameStart = document.getElementById('game-start');
+        gameStart.addEventListener('click',upandDown);
+
+        const numBer = Math.floor(Math.random()*100+1)
+
+        function upandDown(){
+            const getNumber = parseInt(prompt(`1~100중 원하는 숫자를 고르세요`));
+            if(getNumber<numBer){
+                alert(`${getNumber}보다는 큰 수 입니다.`)
+            }
+            else if(getNumber>numBer){
+                alert(`${getNumber}보다 작은 수 입니다.`)
+            }
+            else {
+                alert(`정답입니다. 정답은${numBer}입니다`)
+            }
+        }
+        
+        for(let i = 1; i <= 5; i++){
+            upandDown = i;
+        }
+       
 
 
     </script>
