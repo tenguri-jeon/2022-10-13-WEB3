@@ -7,20 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <button id = "game-start">게임시작!</button>
-=======
     <button id="up-down-game-button">업다운 게임 시작!</button>
->>>>>>> f866ad0e5190f6401b4b692647f11edca01e8972
     <script>
         // const now = new Date(); 일반적인 객체 사용
         
         // Math는 수학과 관련된 상수나 기능들이 들어있는 객체
         // 다른 객체처럼 생성을 따로 하진 않는다. 그냥 사용가능!
-<<<<<<< HEAD
-=======
         
->>>>>>> f866ad0e5190f6401b4b692647f11edca01e8972
         // alert(Math.floor(Math.random()*45+1));
 
 
@@ -46,30 +39,6 @@
 
         */
 
-<<<<<<< HEAD
-        const gameStart = document.getElementById('game-start');
-        gameStart.addEventListener('click',upandDown);
-
-        const numBer = Math.floor(Math.random()*100+1)
-
-        function upandDown(){
-            const getNumber = parseInt(prompt(`1~100중 원하는 숫자를 고르세요`));
-            if(getNumber<numBer){
-                alert(`${getNumber}보다는 큰 수 입니다.`)
-            }
-            else if(getNumber>numBer){
-                alert(`${getNumber}보다 작은 수 입니다.`)
-            }
-            else {
-                alert(`정답입니다. 정답은${numBer}입니다`)
-            }
-        }
-        
-        for(let i = 1; i <= 5; i++){
-            upandDown = i;
-        }
-       
-=======
         
         const upDownGameButton = document.getElementById('up-down-game-button');
         upDownGameButton.addEventListener('click',upDownGameStart);
@@ -82,18 +51,36 @@
             for(let i = 0 ; i < 5 ; i ++){
                 const input = Number(prompt(`1부터 100까지 숫자중 하나를 입력해주세요\n남은 기회는 ${5-i}번입니다.`));
 
+                // 실제 예외처리는 try catch 문을 사용합니다.
+                // 단순 설명을 위해 if문으로 구현했습니다.
+                // 이런식으로 예외처리가 가능하다는 점만 기억하고 있으면 됩니다!
+                if(Number.isNaN(input)){
+                    alert('잘못된 값을 입력하셨습니다. \n숫자만 입력해주세요.');
+                    i--;
+                    continue;
+                }
+                if(!Number.isInteger(input)){
+                    alert('실수를 입력하셨습니다.\n정수만 입력 가능합니다.')
+                    i--;
+                    continue;
+                }
+
                 if(answer < input) {
                     alert(`정답은 ${input}보다 작습니다`)
                 }else if (answer > input) {
                     alert(`정답은 ${input}보다 큽니다`)
                 }else {
                     alert(`정답입니다!`)
+                    break;
+                }
+
+                if(i===4) {
+                    alert(`정답은 ${answer}였습니다.`)
                 }
             }
         }
             
 
->>>>>>> f866ad0e5190f6401b4b692647f11edca01e8972
 
 
     </script>

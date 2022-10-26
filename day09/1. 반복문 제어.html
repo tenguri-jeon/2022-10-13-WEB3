@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 반복문을 제어할수 있는 break;와 continue; 문
+
+        for(let i = 0 ; i < 10 ; i ++){
+            console.log(i);
+            if(i===5){
+                break;
+            }
+        }
+        console.log('반복문이 종료되었습니다')
+
+        // break란
+        /*
+        반복문을 종료시킨다
+        */
+
+        for(let i = 0 ; i < 10 ; i ++){
+            console.log(i);//1부터 9까지 전부 출력
+            if(i===5){
+                continue;
+            }
+            console.log(i);//5 제외하고 1부터 9까지 출력
+        }
+        console.log('반복문이 종료되었습니다')
+        
+        // continue란
+        /*
+        continue를 만나면 그 회차의 반복문을 스킵하고
+        다음 회차를 진행한다.
+        continue를 만나기 전까지 선언된 부분은 정상적으로 작동하고
+        conutnue 하단에 작성된 부분들만 무시된다.
+        */
+
+
+    </script>
+</body>
+</html>

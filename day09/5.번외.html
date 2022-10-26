@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="수렴확인()">확인</button>
+    <script>
+        /*
+        
+        1부터 100까지의 숫자 중 하나를 입력합니다.
+        컴퓨터가 1부터 100까지의 숫자를 랜덤하게 선택해서
+        몇번만에 맞췄는지 그 결과를 출력 해주세요.
+
+        중복값을 제외하는것은 고려하지 않습니다.
+        = 이미 선언한 숫자도 다시 나올수 있습니다.
+
+        while문을 이용해 주세요.
+        
+        */
+
+        function 수렴확인(){
+
+        
+            const 반복횟수 = Number(prompt('몇번 테스트할까요?'))
+
+            let addCount=0;
+
+            for(let i = 0 ; i < 반복횟수 ; i ++) {
+                addCount += findNumber();
+            }
+
+            alert(`${반복횟수}회 실행했습니다\n평균 횟수는 ${addCount/반복횟수}`)
+
+
+            function findNumber(){
+                
+                const input = Math.floor(Math.random()*100+1);
+                let count = 0 ;
+                
+                while(true){
+                    const randomNumber = Math.floor(Math.random()*100+1)
+                    // console.log(randomNumber);
+                    count++;
+                    
+                    if(input===randomNumber){
+                        // console.log(`정답입니다\n시도횟수 : ${count}회`);
+                        break;
+                    }
+                }
+                return count;
+            }
+        }
+    </script>
+</body>
+</html>

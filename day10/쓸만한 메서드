@@ -1,0 +1,15 @@
+    alert()                 알림창 표시
+    blur()                  포커스 제거
+    close()                 현재창 닫기
+    confirm()               확인과 취소 있는 확인창
+    focus()                 현재창에 포커스 부여
+    moveBy()                현재창을 지정한 크기만큼 이동
+    moveTo()                현재창을 지정한 좌표로 이동
+    open()                  새로운 창 열기
+    prompt()                입력한 텍스트 반환하는 창
+    resizeBy()              지정한 크기로 현재창 크기 조절
+    resizeTo()              창 크기 조절을 동적으로
+    scroll()                특정 위치로 스크롤
+    scrollBy()              지정한 크기만큼씩 스크롤
+    scrollTo()              지정한 위치까지 스크롤
+    sizeToContent()         내용에 맞게 창 크기 맞춤
