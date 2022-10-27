@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+        .slider-container {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .slide-wrapper {
+            display: flex;
+            transition: 1s;
+        }
+
+        .slide {
+            width: 300px;
+            height: 200px;
+            font-size: 56px;
+            line-height: 200px;
+            text-align: center;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            border: 1px solid #232323;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <ul class="slide-wrapper">
+            <li class="slide">1</li>
+            <li class="slide">2</li>
+            <li class="slide">3</li>
+            <li class="slide">4</li>
+            <li class="slide">5</li>
+        </ul>
+    </div>
+    <div class="button-wrapper">
+        <button>이전</button><button>다음</button>
+    </div>
+
+    <script>
+
+        const slideWrapper = document.querySelector('.slide-wrapper');
+        const buttonWrapper = document.querySelector('.button-wrapper');
+        const slideWidth = 300;
+        let index = 0;
+        // 이전버튼
+        buttonWrapper.children[0].addEventListener('click', ()=>{
+            index--;
+            slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`
+            
+        })
+        // 다음버튼
+        buttonWrapper.children[1].addEventListener('click', ()=>{
+            index++
+            slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`
+        })
+
+
+
+     /*
+    이전버튼과 다음버튼으로 슬라이드를 넘길수 있게 만들어주세요.
+    값은 한칸에 300px씩 고정된값으로 넣어도 상관없습니다.
+    
+    지금단계에서는 1번 미만, 5번 초과하는것도 상관없습니다.
+    단순히 이전 다음버튼으로 ul을 좌우로 300px씩 움직이도록 만들어주세요.
+
+    ! ul의 translateX 값 바꿔주는방법!
+
+    // 가져온ul.style.transform = `translateX(${바꿔줄값}px)`
+    
+    슬라이드의 현재 위치를 저장해줄 변수가 하나 필요하다.
+    let index 를 하나 선언해서
+
+    // 가져온ul.style.transform = `translateX(${바꿔줄값 * index}px)`
+    
+    다음, 이전 버튼이 하는 일은 index를 늘리고 줄인 후 translateX를 재설정해주는것!
+     */
+
+
+    </script>
+</body>
+</html>

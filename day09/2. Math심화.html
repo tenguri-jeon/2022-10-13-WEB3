@@ -51,13 +51,16 @@
             for(let i = 0 ; i < 5 ; i ++){
                 const input = Number(prompt(`1부터 100까지 숫자중 하나를 입력해주세요\n남은 기회는 ${5-i}번입니다.`));
 
-                if(!Number.isInteger(input)){
-                    alert('실수를 입력하셨습니다.\n정수만 입력 가능합니다.')
+                // 실제 예외처리는 try catch 문을 사용합니다.
+                // 단순 설명을 위해 if문으로 구현했습니다.
+                // 이런식으로 예외처리가 가능하다는 점만 기억하고 있으면 됩니다!
+                if(Number.isNaN(input)){
+                    alert('잘못된 값을 입력하셨습니다. \n숫자만 입력해주세요.');
                     i--;
                     continue;
                 }
-                if(Number.isNaN(input)){
-                    alert('잘못된 값을 입력하셨습니다. \n숫자만 입력해주세요.');
+                if(!Number.isInteger(input)){
+                    alert('실수를 입력하셨습니다.\n정수만 입력 가능합니다.')
                     i--;
                     continue;
                 }

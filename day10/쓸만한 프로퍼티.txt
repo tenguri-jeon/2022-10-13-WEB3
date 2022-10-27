@@ -1,0 +1,10 @@
+    innerHeight      내부의 높이값
+    innerWidth       내부의 너비값
+    localStorage     브라우저의 데이터를 저장하는 로컬 스토리지 반환
+    location         window 객체의 위치나 url
+    name             브라우저 창의 이름을 가져오거나 수정
+    parent           부모요소에 접근
+    screenX          모니터 왼쪽과 브라우저 왼쪽 사이의 거리
+    screenY          모니터 윗쪽과 브라우저 윗쪽 사이의 거리
+    scrollX          스크롤 했을떄 수평으로 이동하는 픽셀 수
+    scrollY          스클로 했을 때 수직으로 이동하는 픽셀 수

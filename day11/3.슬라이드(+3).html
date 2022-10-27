@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+        .slider-container {
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .slide-wrapper {
+            display: flex;
+            transition: 1s;
+        }
+
+        .slide {
+            width: 300px;
+            height: 200px;
+            font-size: 56px;
+            line-height: 200px;
+            text-align: center;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            border: 1px solid #232323;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <ul class="slide-wrapper">
+            <li class="slide">1</li>
+            <li class="slide">2</li>
+            <li class="slide">3</li>
+            <li class="slide">4</li>
+            <li class="slide">5</li>
+        </ul>
+    </div>
+    <div class="button-wrapper">
+        <button>이전</button><button>다음</button>
+    </div>
+
+    <script>
+        //슬라이드 이동이 첫번째나 마지막 슬라이드에서도 자연스럽게 이어지게
+        // 무한히 한방향으로 회전할수있는 캐러셀 제작방법
+        // html요소를 복사하고 붙여넣고, transition값 조절이 필요하다.
+
+
+
+        const slideWrapper = document.querySelector('.slide-wrapper');
+        const buttonWrapper = document.querySelector('.button-wrapper');
+        const slideWidth = 300;
+
+        const copyFirst = slideWrapper.firstElementChild.cloneNode(true);
+        const copyLast = slideWrapper.lastElementChild.cloneNode(true);
+
+        slideWrapper.appendChild(copyFirst);
+        slideWrapper.insertBefore(copyLast,slideWrapper.firstElementChild);
+
+        let moveCheck = true;
+        let index = 0;
+        // 이전버튼
+        buttonWrapper.children[0].addEventListener('click', slideToLeft)
+        // 다음버튼
+        buttonWrapper.children[1].addEventListener('click', sliderToRight)
+
+        function moveSlide(time){
+            slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`;
+            slideWrapper.style.transition = `${time}s`;
+        }
+
+        function slideToLeft() {
+            if(moveCheck){
+                moveCheck = false;
+
+                index--;
+                if(index < 0){
+                    // 5번슬라이드로 이동
+                    index = slideWrapper.childElementCount - 2;
+                    moveSlide(0);
+                }else{
+                    moveSlide(1);
+                }
+                setTimeout(() => {
+                    moveCheck = true;
+                }, 1000);
+            }
+            
+        }
+
+        function sliderToRight() {
+            if(moveCheck){
+                moveCheck = false;
+
+                index++
+                moveSlide(1);
+
+                setTimeout(() => {
+                    if(index === slideWrapper.childElementCount - 1){
+                        index = 1;
+                        moveSlide(0)
+                    }
+                    moveCheck = true;
+                }, 1000);
+            }
+        }
+            
+
+    </script>
+</body>
+</html>
