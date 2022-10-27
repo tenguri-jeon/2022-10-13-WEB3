@@ -49,7 +49,38 @@
         </ul>
     </div>
     <div class="button-wrapper">
-        <button>이전</button><button>다음</button>
+        <button id = "before">이전</button>
+        <button id = "after">다음</button>
     </div>
+
+    <script>
+        const sliderWrapper = document.querySelector('.slide-wrapper');
+        
+        const beFore = document.getElementById('before');
+
+        let index=0;
+
+            for(let i = 0 ; i < 반복횟수 ; i ++) {
+                index += 이전으로이동();
+            
+
+        beFore.addEventListener('click',이전으로이동);
+
+        function 이전으로이동(){
+            sliderWrapper.style.transform = `translateX(${300*index}px)`
+        }
+
+        const aFter = document.getElementById('after');
+
+        aFter.addEventListener('click',다음으로이동);
+        function 다음으로이동(){
+            sliderWrapper.style.transform = `translateX(${-300*index}px)`
+        }
+    }
+        
+
+
+
+    </script>
 </body>
 </html>
