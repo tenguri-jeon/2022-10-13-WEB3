@@ -49,10 +49,12 @@
         </ul>
     </div>
     <div class="button-wrapper">
-        <button>이전</button><button>다음</button>
+        <button id = "before">이전</button>
+        <button id = "after">다음</button>
     </div>
 
     <script>
+<<<<<<< HEAD
 
         const slideWrapper = document.querySelector('.slide-wrapper');
         const buttonWrapper = document.querySelector('.button-wrapper');
@@ -90,6 +92,30 @@
     
     다음, 이전 버튼이 하는 일은 index를 늘리고 줄인 후 translateX를 재설정해주는것!
      */
+=======
+        const sliderWrapper = document.querySelector('.slide-wrapper');
+        
+        const beFore = document.getElementById('before');
+
+        let index=1;
+        const trans300 = 300;
+
+        beFore.addEventListener('click',이전으로이동);
+
+        function 이전으로이동(){
+            sliderWrapper.style.transform = `translateX-(${trans300*index}px)`
+        }
+
+        const aFter = document.getElementById('after');
+
+        aFter.addEventListener('click',다음으로이동);
+        function 다음으로이동(){
+            sliderWrapper.style.transform = `translateX-(${trans300*index}px)`
+        }
+    
+        
+
+>>>>>>> d541b506c0fa5284c4691655df659a479b8fa117
 
 
     </script>

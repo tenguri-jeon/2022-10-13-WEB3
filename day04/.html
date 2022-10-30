@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        프롬프트로 숫자 하나를 입력 받은 뒤
+        그 숫자의 1단부터 9단까지를 콘솔에 출력해주는
+        구구단 출력 프로그램을 만들어주세요!
+        */
+        var 합계 = 0;
+        var 숫자 = parseInt(prompt('몇단 구구단을 외울까요?'))
+        for(var i = 1; i>=10, i++ ){
+            합계 += (`${숫자}x ${i} = ${숫자*i}`)
+        }
+
+        console.log(합계);
+
+
+
+    </script>
+</body>
+</html>
