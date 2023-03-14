@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+
+        .todolist{
+            font-weight: bold;
+            color: rgb(116, 0, 0);
+            font-size: 26px;
+        }
+    
+        .plane-box{
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 36px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;
+        }
+
+        .p-box{
+            width: 100%;
+            height: 30px;
+            border: 1px solid black;
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input{
+            background-color: blue;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .button-wrapper{
+            align-items: center;
+        }
+
+        .input-box{
+            margin-top: 24px;
+            
+        }
+
+        .close{
+            background-color: red;
+            width: 30px;
+            height: 30px;
+            margin-left: 8px;
+        }
+
+        .p{
+            margin-left: 8px;
+        }
+
+        .button-wrapper{
+            display: flex;
+        }
+
+        .total-number{
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .total-number div{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="plane-box">
+        <p class="todolist">To Do List</p>
+        <div class="total-number">
+            <div class="total">
+                <span class="whole">전체 : </span>
+                <span class="total-numbers"> 0</span>
+            </div>
+            <div class="ing">
+                <span class="ing-whole">진행중 : </span>
+                <span class="ing-numbers">0</span>
+            </div>
+            <div class="done">
+                <span class="done-whole">완료 : </span>
+                <span class="done-numbers">0</span>
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-box-text">
+            <button class="register">등록</button>
+        </div>
+    </div>
+
+    <script>
+        let $total = document.getElementsByClassName('total-numbers');
+        let $ing = document.getElementsByClassName('ing-numbers');
+        let $done = document.getElementsByClassName('done-numbers');
+        const $inputText = document.getElementsByClassName('input-box-text');
+        const $register = document.getElementsByClassName('register');
+        const $box = document.getElementsByClassName('plane-box');
+        const $makeNodeNumber = document.getElementsByClassName('p-box');
+
+        function changeNumber() {
+            $total[0].innerHTML = $makeNodeNumber.length;
+        }
+
+
+        // 입풋에 글자 넣고 값 가져오는 함수
+        inputText();
+        function inputText(){
+            if ($inputText  != null) {
+                $register[0].addEventListener('click', ()=>{
+                    makeNode();
+                    changeNumber();
+                    $inputText[0].value = '';
+                })
+            }
+        }
+
+        // 노드 생성 코드
+        function makeNode() {
+            
+        const $planebox = document.createElement('div');
+        $planebox.classList.add('p-box');
+        
+        const $plane = document.createElement('p');
+        $plane.classList.add('p');
+
+        const $inputclose = document.createElement('div')
+        $inputclose.classList.add('button-wrapper');
+            
+        const $input = document.createElement('input');
+        $input.setAttribute('type', 'checkbox')
+        $input.classList.add('input');
+        
+        const $close = document.createElement('div');
+        $close.classList.add('close');
+        
+        $planebox.appendChild($plane);
+        $planebox.appendChild($inputclose);
+        $inputclose.appendChild($input);
+        $inputclose.appendChild($close);
+        
+        $box[0].insertBefore($planebox, null);
+
+        $plane.innerHTML = $inputText[0].value;
+
+
+    checkedText();
+    function checkedText(params) {
+        $input.addEventListener('change', ()=>{
+            if ($input.checked) {
+                $plane.style.textDecoration = "line-through";
+            }
+            else{
+                $plane.style.textDecoration = "none";
+            }
+        })  
+    }
+
+    $close.addEventListener('click', ()=>{
+        $planebox.remove();
+        changeNumber();
+    })
+
+}
+        
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
