@@ -110,15 +110,15 @@
         let $total = document.getElementsByClassName('total-numbers');
         let $ing = document.getElementsByClassName('ing-numbers');
         let $done = document.getElementsByClassName('done-numbers');
+        let doneNumber = 0;
         const $inputText = document.getElementsByClassName('input-box-text');
         const $register = document.getElementsByClassName('register');
         const $box = document.getElementsByClassName('plane-box');
         const $makeNodeNumber = document.getElementsByClassName('p-box');
-
+        
         function changeNumber() {
-            $total[0].innerHTML = $makeNodeNumber.length;
-        }
-
+                $total[0].innerHTML = $makeNodeNumber.length;
+            }
 
         // 입풋에 글자 넣고 값 가져오는 함수
         inputText();
@@ -133,52 +133,58 @@
         }
 
         // 노드 생성 코드
-        function makeNode() {
+function makeNode() {
             
-        const $planebox = document.createElement('div');
-        $planebox.classList.add('p-box');
+    const $planebox = document.createElement('div');
+    $planebox.classList.add('p-box');
+    
+    const $plane = document.createElement('p');
+    $plane.classList.add('p');
+    const $inputclose = document.createElement('div')
+    $inputclose.classList.add('button-wrapper');
         
-        const $plane = document.createElement('p');
-        $plane.classList.add('p');
-
-        const $inputclose = document.createElement('div')
-        $inputclose.classList.add('button-wrapper');
-            
-        const $input = document.createElement('input');
-        $input.setAttribute('type', 'checkbox')
-        $input.classList.add('input');
-        
-        const $close = document.createElement('div');
-        $close.classList.add('close');
-        
-        $planebox.appendChild($plane);
-        $planebox.appendChild($inputclose);
-        $inputclose.appendChild($input);
-        $inputclose.appendChild($close);
-        
-        $box[0].insertBefore($planebox, null);
-
-        $plane.innerHTML = $inputText[0].value;
-
-
-    checkedText();
-    function checkedText(params) {
+    const $input = document.createElement('input');
+    $input.setAttribute('type', 'checkbox')
+    $input.classList.add('input');
+    
+    const $close = document.createElement('div');
+    $close.classList.add('close');
+    
+    $planebox.appendChild($plane);
+    $planebox.appendChild($inputclose);
+    $inputclose.appendChild($input);
+    $inputclose.appendChild($close);
+    
+    $box[0].insertBefore($planebox, null);
+    $plane.innerHTML = $inputText[0].value;
+    
+    // 체크박스 관리하는 함수
+    checkboxNumber()
+    function checkboxNumber() {
         $input.addEventListener('change', ()=>{
             if ($input.checked) {
                 $plane.style.textDecoration = "line-through";
+            doneNumber++
             }
             else{
                 $plane.style.textDecoration = "none";
+                doneNumber--
             }
+        // 닫기버튼 관리하는 이벤트
+        $close.addEventListener('click', ()=>{
+            $planebox.remove();
+            changeNumber();
+            doneNumber--
+        })
+        
+        $ing[0].innerHTML = doneNumber;
+        console.log(doneNumber)
         })  
+    } 
+    
     }
 
-    $close.addEventListener('click', ()=>{
-        $planebox.remove();
-        changeNumber();
-    })
 
-}
         
         
 
