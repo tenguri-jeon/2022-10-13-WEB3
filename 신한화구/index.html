@@ -5,32 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo-wrapper">
-                <h1>
-                    <span class="hide-text">
-                        신한화구 로고
-                    </span>
-                </h1>
-                <div class="language">
-                    <span class="kor">
-                        KOR
-                    </span>
-                    <span class="enf">
-                        ENG
-                    </span>
+                <div class="nav-left">
+                    <h1>
+                        <span class="hide-text">
+                            신한화구 로고
+                        </span>
+                    </h1>
+                    <div class="language">
+                        <span class="kor">
+                            KOR
+                        </span>
+                        <span class="enf">
+                            ENG
+                        </span>
+                    </div>
+                </div>
+                <div class="tap-menu">
                 </div>
             </div>
             <div class="menu">
             </div>
         </nav>
-        <div class="menubar">
+        <div class="menubars">
             <ul class="sub-menu">
                 <li class="sub-menu-tittle">
-                     <a href="#">About Us</a> 
+                     <a href="#" class="headtag">About Us</a> 
                      <ul class="sub-list">
                         <li> <a href="#">ShinHanArt</a> </li>
                         <li> <a href="#">Our History</a> </li>
@@ -38,7 +43,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Products</a> 
+                     <a href="#" class="headtag">Products</a> 
                      <ul class="sub-list">
                         <li> <a href="#">Oil Colors</a> </li>
                         <li> <a href="#">Acrylic Colors</a> </li>
@@ -55,7 +60,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Brand</a> 
+                     <a href="#" class="headtag">Brand</a> 
                      <ul class="sub-list">
                         <li> <a href="#">TOUCH</a> </li>
                         <li> <a href="#">PRO Line</a> </li>
@@ -65,7 +70,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Import Brands</a> 
+                     <a href="#" class="headtag">Import Brands</a> 
                      <ul class="sub-list">
                         <li> <a href="#">FLEUR</a> </li>
                         <li> <a href="#">PANPASTEL</a> </li>
@@ -75,7 +80,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Inspitation</a> 
+                     <a href="#" class="headtag">Inspitation</a> 
                      <ul class="sub-list">
                         <li> <a href="#">Artist</a> </li>
                         <li> <a href="#">Thinkart Korea</a> </li>
@@ -83,7 +88,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Discover</a> 
+                     <a href="#" class="headtag">Discover</a> 
                      <ul class="sub-list">
                         <li> <a href="#">Tips & Techniques</a> </li>
                         <li> <a href="#">Blog & Post</a> </li>
@@ -92,7 +97,7 @@
                      </ul>
                 </li>
                 <li class="sub-menu-tittle">
-                     <a href="#">Store</a> 
+                     <a href="#" class="headtag">Store</a> 
                 </li>
             </ul>
         </div>
@@ -234,6 +239,15 @@
             </div>
         </div>
     </section>
+    <script>
+        const $tapMenu = document.getElementsByClassName('tap-menu');
+        const $header = document.getElementsByTagName('header');
 
+        $tapMenu[0].addEventListener('click', ()=>{
+            $header[0].classList.toggle('color')
+        })
+
+
+    </script>
 </body>
 </html>
