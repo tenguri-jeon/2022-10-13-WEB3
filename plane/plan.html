@@ -110,14 +110,14 @@
         let $total = document.getElementsByClassName('total-numbers');
         let $ing = document.getElementsByClassName('ing-numbers');
         let $done = document.getElementsByClassName('done-numbers');
-        let doneNumber = 0;
         const $inputText = document.getElementsByClassName('input-box-text');
         const $register = document.getElementsByClassName('register');
         const $box = document.getElementsByClassName('plane-box');
         const $makeNodeNumber = document.getElementsByClassName('p-box');
-        
+        let $input = document.getElementsByClassName('input');
+ 
         function changeNumber() {
-                $total[0].innerHTML = $makeNodeNumber.length;
+                $input[0].innerHTML = $makeNodeNumber.length;
             }
 
         // 입풋에 글자 넣고 값 가져오는 함수
@@ -162,34 +162,25 @@ function makeNode() {
     checkboxNumber()
     function checkboxNumber() {
         $input.addEventListener('change', ()=>{
+            console.log("클릭됨")
             if ($input.checked) {
                 $plane.style.textDecoration = "line-through";
-            doneNumber++
+                
             }
             else{
                 $plane.style.textDecoration = "none";
-                doneNumber--
             }
+
         // 닫기버튼 관리하는 이벤트
         $close.addEventListener('click', ()=>{
             $planebox.remove();
             changeNumber();
-            doneNumber--
         })
         
-        $ing[0].innerHTML = doneNumber;
-        console.log(doneNumber)
         })  
     } 
     
     }
-
-
-        
-        
-
-
-
 
 
     </script>
